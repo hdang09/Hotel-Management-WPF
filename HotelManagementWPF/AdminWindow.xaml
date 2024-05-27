@@ -1,0 +1,24 @@
+﻿<Window x:Class="HotelManagementWPF.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HotelManagementWPF"
+        mc:Ignorable="d"
+        Title="AdminWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Label Content="Manage Customers" HorizontalAlignment="Left" Margin="132,21,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <DataGrid x:Name="dgvCustomers" AutoGenerateColumns="False" Margin="141,63,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Customer Id" Binding="{Binding CustomerId}" />
+                <DataGridTextColumn Header="Customer Full Name" Binding="{Binding CustomerFullName}" />
+                <DataGridTextColumn Header="Customer Telephone" Binding="{Binding Telephone}" />
+                <DataGridTextColumn Header="Customer Birthday" Binding="{Binding CustomerBirthday}" />
+                <DataGridTextColumn Header="Customer Email Address" Binding="{Binding EmailAddress}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="lbMC" Content="Manage Customers" HorizontalAlignment="Left" Margin="0,95,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="lbMR" Content="Manage Rooms" HorizontalAlignment="Left" Margin="0,154,0,0" VerticalAlignment="Top" MouseDown="lbMR_MouseDown"/>
+
+    </Grid>
+</Window>

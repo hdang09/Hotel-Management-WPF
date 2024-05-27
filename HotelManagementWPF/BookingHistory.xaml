@@ -1,0 +1,26 @@
+﻿<Window x:Class="HotelManagementWPF.BookingHistory"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HotelManagementWPF"
+        mc:Ignorable="d"
+        Title="BookingHistory" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid Margin="0,0,-153,-99">
+        <Label Content="Booking History" HorizontalAlignment="Left" Margin="173,31,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <Label Content="Manage Profile" HorizontalAlignment="Left" Margin="17,93,0,0" VerticalAlignment="Top" MouseDown="Label_MouseDown" />
+        <Label Content="Booking History" HorizontalAlignment="Left" Margin="17,160,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <DataGrid x:Name="dgBookingHistory" AutoGenerateColumns="False" IsReadOnly="True" CanUserResizeColumns="False" CanUserReorderColumns="False" SelectionMode="Single" CanUserAddRows="False" CanUserDeleteRows="False" Margin="137,75,114,101">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="BookingReservationId" Binding="{Binding BookingReservationId}"  Width="SizeToHeader"/>
+                <DataGridTextColumn Header="RoomId" Binding="{Binding RoomId}"  Width="SizeToHeader"/>
+                <DataGridTextColumn Header="RoomNumber" Binding="{Binding RoomNumber}" Width="SizeToHeader"/>
+                <DataGridTextColumn Header="BookingDate" Binding="{Binding BookingDate}" Width="SizeToHeader"/>
+                <DataGridTextColumn Header="StartDate" Binding="{Binding StartDate}" Width="SizeToHeader"/>
+                <DataGridTextColumn Header="EndDate" Binding="{Binding EndDate}" Width="SizeToHeader"/>
+                <DataGridTextColumn Header="ActualPrice" Binding="{Binding ActualPrice}" Width="SizeToHeader"/>
+                <DataGridTextColumn Header="TotalPrice" Binding="{Binding TotalPrice}" Width="SizeToHeader" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
