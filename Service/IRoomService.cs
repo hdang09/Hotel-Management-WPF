@@ -18,5 +18,7 @@ namespace Service
         RoomInformation GetRoomById(int id);
 
         List<BookingHistoryDTO> GetBookingByCusId(int id);
+
+        void UpdateRoom(RoomInformation room);
     }
 }

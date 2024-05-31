@@ -26,5 +26,7 @@ namespace Service
         public List<RoomInformation> GetRooms() => iRoomRepository.GetRooms();
 
         public List<BookingHistoryDTO> GetBookingByCusId(int id) => iRoomRepository.GetBookingByCusId(id);
+
+        public void UpdateRoom(RoomInformation room) => iRoomRepository.UpdateRoom(room);
     }
 }

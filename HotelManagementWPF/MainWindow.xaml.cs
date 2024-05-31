@@ -1,18 +1,10 @@
 ﻿using BusinessObjects;
-using DataAccessLayer;
+using Microsoft.Extensions.Configuration;
 using Service;
-using System.Text;
+using System.IO;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
-namespace HotelManagementWPF
+namespace TranHaiDangWPF
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -65,6 +57,15 @@ namespace HotelManagementWPF
                     MessageBox.Show("Invalid credentials");
                 }
             }
+        }
+
+        private bool IsAdmin(string email, string password)
+        {
+            IConfiguration configuration = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", true, true).Build();
+
+            return email.Equals(configuration["AdminAccount:Email"]) && password.Equals(configuration["AdminAccount:Password"]);
         }
     }
 }

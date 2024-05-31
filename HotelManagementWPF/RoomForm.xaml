@@ -1,0 +1,24 @@
+﻿<Window x:Class="TranHaiDangWPF.RoomForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TranHaiDangWPF"
+        mc:Ignorable="d"
+        Title="RoomForm" Height="450" Width="358">
+    <Grid>
+        <TextBox x:Name="txtRoomId" HorizontalAlignment="Left" Margin="176,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Room ID" HorizontalAlignment="Left" Margin="59,64,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtRoomNumber" HorizontalAlignment="Left" Margin="176,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Room Number" HorizontalAlignment="Left" Margin="59,120,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtCapacity" HorizontalAlignment="Left" Margin="176,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Capacity" HorizontalAlignment="Left" Margin="59,171,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtDescription" HorizontalAlignment="Left" Margin="177,233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="53"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="60,229,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Margin="177,313,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Price Per Day" HorizontalAlignment="Left" Margin="60,309,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnSubmit_Copy" Content="Back" HorizontalAlignment="Left" Margin="113,379,0,0" VerticalAlignment="Top" Width="50" Click="btnSubmit_Copy_Click" />
+        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="194,379,0,0" VerticalAlignment="Top" Click="btnSubmit_Click" Width="59"/>
+
+    </Grid>
+</Window>
