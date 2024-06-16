@@ -1,18 +1,8 @@
 ﻿using BusinessObjects;
+using BusinessObjects.DTO;
 using Service;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace TranHaiDangWPF
 {
@@ -29,7 +19,8 @@ namespace TranHaiDangWPF
         {
             InitializeComponent();
             roomService = new RoomService();
-
+            //btnUpdate.IsEnabled = false;
+            //btnDelete.IsEnabled = false;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -44,6 +35,15 @@ namespace TranHaiDangWPF
             CustomerWindow customerWindow = new CustomerWindow();
             customerWindow.customer = customer;
             customerWindow.Show();
+            this.Hide();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            BookingForm bookingForm = new BookingForm();
+            bookingForm.Customer = customer;
+            //bookingForm.Booking = new BookingDTO();
+            bookingForm.Show();
             this.Hide();
         }
     }

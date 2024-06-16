@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BusinessObjects;
+using BusinessObjects.DTO;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataAccessLayer
@@ -29,6 +30,7 @@ namespace DataAccessLayer
             try
             {
                 using var context = new FuminiHotelManagementContext();
+                room.RoomType = context.RoomTypes.First();
                 context.RoomInformations.Add(room);
                 context.SaveChanges();
             } 
@@ -43,7 +45,12 @@ namespace DataAccessLayer
             try
             {
                 using var context = new FuminiHotelManagementContext();
-                context.Entry<RoomInformation>(room).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                var newRoom = GetRoomById(room.RoomId);
+                newRoom.RoomDetailDescription = room.RoomDetailDescription;
+                newRoom.RoomNumber = room.RoomNumber;
+                newRoom.RoomMaxCapacity = room.RoomMaxCapacity;
+                newRoom.RoomPricePerDay = room.RoomPricePerDay;
+                context.Entry<RoomInformation>(newRoom).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                 context.SaveChanges();
             }
             catch (Exception ex)
@@ -74,6 +81,29 @@ namespace DataAccessLayer
         {
             using var context = new FuminiHotelManagementContext();
             return context.RoomInformations.FirstOrDefault(room => room.RoomId.Equals(id));
+        }
+
+        public static List<BookingHistoryDTO>? GetBooking()
+        {
+            using var db = new FuminiHotelManagementContext();
+            return db.BookingDetails
+                .Include(bd => bd.BookingReservation)
+                    .ThenInclude(br => br.Customer)
+                .Include(bd => bd.Room)
+                .Select(bd => new BookingHistoryDTO
+                {
+                    BookingReservationId = bd.BookingReservationId,
+                    RoomId = bd.RoomId,
+                    RoomNumber = bd.Room.RoomNumber,
+                    StartDate = bd.StartDate,
+                    EndDate = bd.EndDate,
+                    ActualPrice = bd.ActualPrice,
+                    BookingDate = bd.BookingReservation.BookingDate,
+                    TotalPrice = bd.BookingReservation.TotalPrice,
+                    CustomerId = bd.BookingReservation.CustomerId,
+                    BookingStatus = bd.BookingReservation.BookingStatus
+                })
+                .ToList();
         }
 
         public static List<BookingHistoryDTO>? GetBookingByCusId(int id)

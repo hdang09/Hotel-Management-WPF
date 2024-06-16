@@ -7,10 +7,14 @@
         mc:Ignorable="d"
         Title="BookingHistory" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid Margin="0,0,-153,-99">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="632*"/>
+            <ColumnDefinition Width="321*"/>
+        </Grid.ColumnDefinitions>
         <Label Content="Booking History" HorizontalAlignment="Left" Margin="173,31,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
         <Label Content="Manage Profile" HorizontalAlignment="Left" Margin="17,93,0,0" VerticalAlignment="Top" MouseDown="Label_MouseDown" />
         <Label Content="Booking History" HorizontalAlignment="Left" Margin="17,160,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <DataGrid x:Name="dgBookingHistory" AutoGenerateColumns="False" IsReadOnly="True" CanUserResizeColumns="False" CanUserReorderColumns="False" SelectionMode="Single" CanUserAddRows="False" CanUserDeleteRows="False" Margin="137,75,114,101">
+        <DataGrid x:Name="dgBookingHistory" AutoGenerateColumns="False" IsReadOnly="True" CanUserResizeColumns="False" CanUserReorderColumns="False" SelectionMode="Single" CanUserAddRows="False" CanUserDeleteRows="False" Margin="137,75,114,101" Grid.ColumnSpan="2">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="BookingReservationId" Binding="{Binding BookingReservationId}"  Width="SizeToHeader"/>
                 <DataGridTextColumn Header="RoomId" Binding="{Binding RoomId}"  Width="SizeToHeader"/>
@@ -22,5 +26,8 @@
                 <DataGridTextColumn Header="TotalPrice" Binding="{Binding TotalPrice}" Width="SizeToHeader" />
             </DataGrid.Columns>
         </DataGrid>
+        <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="521,31,0,0" VerticalAlignment="Top" Width="51" Click="Button_Click"/>
+        <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="614,31,0,0" VerticalAlignment="Top" Width="51" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="71,29,0,0" VerticalAlignment="Top" Width="51" Grid.Column="1"/>
     </Grid>
 </Window>

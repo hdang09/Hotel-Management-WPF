@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Re
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.csproj", "{38405ACD-50EA-4DED-A237-CB1EC91F9E72}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TranHaiDangWPF", "HotelManagementWPF\TranHaiDangWPF.csproj", "{39265928-02F2-4BF9-892C-AB04FC187D39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TranHaiDangWPF", "TranHaiDangWPF\TranHaiDangWPF.csproj", "{39265928-02F2-4BF9-892C-AB04FC187D39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

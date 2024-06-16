@@ -1,4 +1,5 @@
 ﻿using BusinessObjects;
+using Microsoft.Extensions.Primitives;
 using Service;
 using System;
 using System.Collections.Generic;
@@ -33,24 +34,24 @@ namespace TranHaiDangWPF
         {
             RoomInformation newRoom = new RoomInformation()
             {
-                RoomId = Int32.Parse(txtRoomId.Text),
                 RoomNumber = txtRoomNumber.Text,
                 RoomMaxCapacity = Int32.Parse(txtCapacity.Text),
                 RoomDetailDescription = txtDescription.Text,
-                RoomPricePerDay = Int32.Parse(txtPrice.Text),
+                RoomPricePerDay = (int)decimal.Parse(txtPrice.Text),
                 RoomTypeId = 1,
                 BookingDetails = new List<BookingDetail>(),
-                RoomType = new RoomType()
             };
 
             RoomService roomService = new RoomService();
             if (isEdit)
             {
-                //roomService.UpdateRoom(newRoom);
+                newRoom.RoomId = room.RoomId;
+                roomService.UpdateRoom(newRoom);
             }
             else
             {
-                //roomService.CreateRoom(newRoom);
+                
+                roomService.CreateRoom(newRoom);
             }
             handleGoBack();
         }
@@ -65,6 +66,18 @@ namespace TranHaiDangWPF
             ManageRooms manageRooms = new ManageRooms();
             manageRooms.Show();
             this.Hide();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (room != null)
+            {
+                txtRoomId.Text = room.RoomId.ToString();
+                txtRoomNumber.Text = room.RoomNumber;
+                txtCapacity.Text = room.RoomNumber.ToString();
+                txtDescription.Text = room.RoomDetailDescription;
+                txtPrice.Text = room.RoomPricePerDay.ToString();
+            }
         }
     }
 }

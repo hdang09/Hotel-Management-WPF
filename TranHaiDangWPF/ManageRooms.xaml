@@ -27,7 +27,7 @@
         </DataGrid>
         <Label x:Name="lbMC" Content="Manage Customers" HorizontalAlignment="Left" Margin="0,95,0,0" VerticalAlignment="Top" MouseDown="lbMC_MouseDown_1"/>
         <Label x:Name="lbMR" Content="Manage Rooms" HorizontalAlignment="Left" Margin="0,154,0,0" VerticalAlignment="Top" FontWeight="Bold" />
-        <Label x:Name="lbRS" Content="Report Statistic" HorizontalAlignment="Left" Margin="2,217,0,0" VerticalAlignment="Top" />
+        <Label x:Name="lbRS" Content="Report Statistic" HorizontalAlignment="Left" Margin="2,217,0,0" VerticalAlignment="Top" MouseDown="lbRS_MouseDown_1" />
 
         <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="641,33,0,0" VerticalAlignment="Top" Width="57" Click="btnAdd_Click"/>
         <Button x:Name="btnEdit" Content="Edit" HorizontalAlignment="Left" Margin="733,33,0,0" VerticalAlignment="Top" Width="57" Click="btnEdit_Click"/>

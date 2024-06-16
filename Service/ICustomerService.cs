@@ -18,5 +18,7 @@ namespace Service
         void DeleteCustomer(int id);
 
         Customer GetCustomerById(int id);
+
+        void UpdateCustomer(Customer customer);
     }
 }

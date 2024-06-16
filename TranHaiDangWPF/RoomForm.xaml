@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TranHaiDangWPF"
         mc:Ignorable="d"
-        Title="RoomForm" Height="450" Width="358">
+        Title="RoomForm" Height="450" Width="358" Loaded="Window_Loaded">
     <Grid>
         <TextBox x:Name="txtRoomId" HorizontalAlignment="Left" Margin="176,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Room ID" HorizontalAlignment="Left" Margin="59,64,0,0" VerticalAlignment="Top"/>

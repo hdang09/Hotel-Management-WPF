@@ -25,7 +25,7 @@ namespace TranHaiDangWPF
             var password = txtPassword.Password;
 
             // Admin role
-            if (email.Equals("admin@FUMiniHotelSystem.com") && password.Equals("@@abc123@@"))
+            if (IsAdmin(email, password))
             {
                 AdminWindow adminWindow = new AdminWindow();
                 adminWindow.customer = new Customer()

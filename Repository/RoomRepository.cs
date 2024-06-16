@@ -1,4 +1,5 @@
 ﻿using BusinessObjects;
+using BusinessObjects.DTO;
 using DataAccessLayer;
 using System;
 using System.Collections.Generic;
@@ -21,5 +22,7 @@ namespace Repository
         public List<RoomInformation> GetRooms() => RoomDAO.GetRooms();
 
         public void UpdateRoom(RoomInformation room) => RoomDAO.UpdateRoom(room);
+
+        public List<BookingHistoryDTO> GetBooking() => RoomDAO.GetBooking();
     }
 }

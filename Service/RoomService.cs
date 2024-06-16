@@ -1,4 +1,5 @@
 ﻿using BusinessObjects;
+using BusinessObjects.DTO;
 using Repository;
 using System;
 using System.Collections.Generic;
@@ -28,5 +29,7 @@ namespace Service
         public List<BookingHistoryDTO> GetBookingByCusId(int id) => iRoomRepository.GetBookingByCusId(id);
 
         public void UpdateRoom(RoomInformation room) => iRoomRepository.UpdateRoom(room);
+
+        public List<BookingHistoryDTO> GetBooking() => iRoomRepository.GetBooking();
     }
 }

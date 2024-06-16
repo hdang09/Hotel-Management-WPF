@@ -1,4 +1,5 @@
 ﻿using BusinessObjects;
+using BusinessObjects.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,5 +21,7 @@ namespace Service
         List<BookingHistoryDTO> GetBookingByCusId(int id);
 
         void UpdateRoom(RoomInformation room);
+
+        List<BookingHistoryDTO> GetBooking();
     }
 }

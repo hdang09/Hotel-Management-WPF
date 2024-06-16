@@ -108,5 +108,12 @@ namespace TranHaiDangWPF
                 dgvRooms.ItemsSource = roomService.GetRooms();
             }
         }
+
+        private void lbRS_MouseDown_1(object sender, MouseButtonEventArgs e)
+        {
+            ReportStatic reportStatic = new ReportStatic();
+            reportStatic.Show();
+            this.Hide();
+        }
     }
 }

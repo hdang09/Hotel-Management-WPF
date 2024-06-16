@@ -17,6 +17,8 @@ namespace TranHaiDangWPF
         {
             InitializeComponent();
             customerService = new CustomerService();
+            btnEdit.IsEnabled = false;
+            btnDelete.IsEnabled = false;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -33,18 +35,18 @@ namespace TranHaiDangWPF
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            RoomForm roomForm = new RoomForm();
-            roomForm.isEdit = false;
-            roomForm.Show();
+            CustomerForm customerForm = new CustomerForm();
+            customerForm.isEdit = false;
+            customerForm.Show();
             this.Hide();
         }
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            RoomForm roomForm = new RoomForm();
-            //roomForm.room = room;
-            roomForm.isEdit = true;
-            roomForm.Show();
+            CustomerForm customerForm = new CustomerForm();
+            customerForm.customer = customer;
+            customerForm.isEdit = true;
+            customerForm.Show();
             this.Hide();
         }
 
